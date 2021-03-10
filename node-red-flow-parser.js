@@ -1,4 +1,4 @@
-export {allStartNodes, nodeById, isFlow};
+export {allStartNodes, nodeById, isFlow, nextNode};
 
 function slugify(string) {
 	return string.replace(/[^a-zA-Z0-9 \-]/g, "").replace(/[ ]/g, "-").toLowerCase();	
