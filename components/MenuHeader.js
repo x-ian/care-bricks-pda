@@ -10,7 +10,7 @@ const MenuHeader = () => {
             </Button>
           </Left>
           <Body>
-            <Title>ALUP</Title>
+            <Title>Diagnosing Childhood Malaria</Title>
           </Body>
           <Right>
             <Button transparent onPress={() => this.props.navigation.openDrawer()}>

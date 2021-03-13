@@ -7,7 +7,7 @@ const Item = ({ item, onPress, style }) => (
   </TouchableOpacity>
 );
 
-const CBQuestionSelectSingle = ({ entries, nextNodeCallback, title }) => {
+const QuestionSelectSingle = ({ flowDefinition, currentNode, setNextNode, updateFlowData }) => {
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
@@ -23,10 +23,15 @@ const CBQuestionSelectSingle = ({ entries, nextNodeCallback, title }) => {
   };
 
   return (
+		const nodes = [];
+		for (const node of currentNode.devices) {
+			nodes.push({id: node.sid, text: node.sid + " (" + node.sid + ")"});
+		}
+
     <SafeAreaView style={styles.container}>
 		  <Text style={styles.titleText}>{title}</Text>
       <FlatList
-        data={entries}
+        data={nodes}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         extraData={selectedId}
@@ -56,4 +61,4 @@ const styles = StyleSheet.create({
 	
 });
 
-export default CBQuestionSelectSingle;
+export default QuestionSelectSingle;

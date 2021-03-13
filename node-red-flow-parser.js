@@ -36,6 +36,8 @@ function allStartNodes(jsonFlow, flow) {
 }
 
 function nodeById(jsonFlow, nodeid) {
+	// console.log(nodeid);
+	// console.log(jsonFlow);
   var nodes = jsonFlow.filter(function(i) {
     // console.log(i);
     return i.id === nodeid;

@@ -4,7 +4,6 @@ import { List, ListItem, Left, Right, Text, Radio, Icon } from 'native-base';
 import RadioButtonGroup from "./RadioButtonGroup";
 import CBQuestionSelectSingle from "./CBQuestionSelectSingle";
 import { allStartNodes, nodeById, isFlow, nextNode } from '../node-red-flow-parser.js';
-import FlowStartNodes from "../components/FlowStartNodes";
 
 const Flow = (props) => {
 	
@@ -13,6 +12,9 @@ const Flow = (props) => {
 	
 	const setNextNodeInFlowState = (nodeId) => {
 	 this.setState({nextNodeId: nodeId});
+
+	 console.log("2323");
+	 console.log(nodeId);
 	 if (nodeById(this.state.data, nodeId).type === 'case-start') {
 		 var nn = nextNode(this.state.data, nodeById(this.state.data, nodeId))[0];
 		 this.setState({currentNodeId: nn.id});
@@ -23,6 +25,9 @@ const Flow = (props) => {
 
  	const updateFlowData = (nodeId) => {
  	 this.setState({nextNodeId: nodeId});
+
+ 	 console.log("2323");
+ 	 console.log(nodeId);
  	 if (nodeById(this.state.data, nodeId).type === 'case-start') {
  		 var nn = nextNode(this.state.data, nodeById(this.state.data, nodeId))[0];
  		 this.setState({currentNodeId: nn.id});
@@ -33,10 +38,16 @@ const Flow = (props) => {
 	
 	// all supported node types
 	const renderNodes = () => {
+		console.log("11111a");
+		console.log(props.currentNode);
+
 		if (isFlow(props.currentNode)) {
 		// tabs (aka one flow)
-			return <FlowStartNodes flowDefinition={props.jsonFlow} currentNode={props.currentNode} setNextNode={setNextNodeInFlowState} updateFlowData={updateFlowData}/>
-
+			const nodes = [];
+			for (const node of allStartNodes(props.jsonFlow, props.currentNode)) {
+				nodes.push({id: node.id, text: node.name + " (" + node.type + ")"});
+			}
+			return <CBQuestionSelectSingle entries={nodes} nextNodeCallback={props.nextNodeCallback} />
 
 		} else if (props.currentNode.type === 'switch-manual'){
 			// switch-manual

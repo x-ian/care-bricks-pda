@@ -1,26 +1,17 @@
 import React from 'react';
 import { View } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
 import { Button, Icon } from 'native-base';
 
-const FlowActions = () => {
+const FlowActions = ({cancelButton, cameraButton, previousButton, reloadButton, nextButton}) => {
   return (
 			<View style={{  }}>
 				<View style={{ flexDirection:'row', backgroundColor: '#4154b3', justifyContent: 'space-around' }}>
-					<Button >
-						<Icon name='md-stop' />
-					</Button>
-					<Button >
-						<Icon name='md-camera' />
-					</Button>
-					<Button >
-						<Icon name='md-play-skip-back' />
-					</Button>
-					<Button >
-						<Icon name='md-refresh' />
-					</Button>
-					<Button >
-						<Icon name='md-play-skip-forward' />
-					</Button>
+					<FontAwesome.Button name="eject" onPress={cancelButton} backgroundColor="transparent"/>
+					<FontAwesome.Button name="camera" backgroundColor="transparent"/>
+					<FontAwesome.Button name="caret-left" onPress={previousButton} backgroundColor="transparent"/>
+					<FontAwesome.Button name="reload"  backgroundColor="transparent"/>
+					<FontAwesome.Button name="caret-right" onPress={nextButton} backgroundColor="transparent"/>
 				</View>
 			</View>
   );
