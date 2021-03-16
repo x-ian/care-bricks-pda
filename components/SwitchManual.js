@@ -46,8 +46,8 @@ const SwitchManual = ({ flowDefinition, currentNode, setNextNode, updateFlowData
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
+    // flex: 1,
+    // marginTop: StatusBar.currentHeight || 0,
   },
   item: {
     padding: 10,

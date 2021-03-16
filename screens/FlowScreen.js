@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { View } from 'react-native';
-import { List, ListItem, Left, Right, Text, Radio, Icon } from 'native-base';
-import RadioButtonGroup from "../components/RadioButtonGroup";
-import CBQuestionSelectSingle from "../components/CBQuestionSelectSingle";
-import FlowStartNodes from "../components/FlowStartNodes";
 import Node from "../components/Node";
 import FlowActions from "../components/FlowActions";
 import AdditionalTabs from "../components/AdditionalTabs";
@@ -45,12 +41,12 @@ const FlowScreen = ({ flowDefinition, flowTab }) => {
 	};
 		
   return (
-		<View>
+		<View style = {{flex: 1}}>
 			<Node flowDefinition={flowDefinition} currentNode={currentNode} setNextNode={setNextNodeInFlowScreenState} updateFlowData={updateFlowData}/>
+			<FlowActions cancelButton={cancelButton} cameraButton={cameraButton} previousButton={previousButton} reloadButton={reloadButton} nextButton={nextButton}/>
 		</View>
   );
 }
-			// <FlowActions cancelButton={cancelButton} cameraButton={cameraButton} previousButton={previousButton} reloadButton={reloadButton} nextButton={nextButton}/>
 
 			// <AdditionalTabs />
 

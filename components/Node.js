@@ -6,13 +6,8 @@ import QuestionSelectSingle from "./QuestionSelectSingle";
 import QuestionPrimitiveDate from "./QuestionPrimitiveDate";
 import QuestionPrimitiveString from "./QuestionPrimitiveString";
 import { allStartNodes, nodeById, isFlow, nextNode } from '../node-red-flow-parser.js';
-import FlowStartNodes from "./FlowStartNodes";
 import FlowStartNodesFlat from "./FlowStartNodesFlat";
 import SwitchManual from "./SwitchManual";
-import FlatListSimple from "./FlatListSimple";
-import FlatListSimple2 from "./FlatListSimple2";
-import FlatListSimple3 from "./FlatListSimple3";
-import ScrollViewer from "./ScrollViewer";
 
 const Node = ({ flowDefinition, currentNode, setNextNode, updateFlowData }) => {
 	
@@ -75,7 +70,7 @@ const Node = ({ flowDefinition, currentNode, setNextNode, updateFlowData }) => {
 	
 	//  style={{ flex: 3, justifyContent: 'center',}}>
   return (
-	<View  tyle={{ flex: 3, justifyContent: 'center',}} >
+	<View  style={{ flex: 3, justifyContent: 'center',}} >
 	  { renderNodes() }
 	</View>
   );

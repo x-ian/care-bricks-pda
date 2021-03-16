@@ -46,17 +46,17 @@ const QuestionSelectSingle = ({ flowDefinition, currentNode, setNextNode, update
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
+    // flex: 1,
+    // marginTop: StatusBar.currentHeight || 0,
   },
   item: {
     padding: 10,
     marginVertical: 3,
     marginHorizontal: 3,
   },
-  // title: {
-  //   fontSize: 32,
-  // },
+  title: {
+    fontSize: 20,
+  },
 	  titleText: {
 	    fontSize: 20,
 	    fontWeight: "bold",

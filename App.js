@@ -5,9 +5,7 @@ import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 import { Container, Header, Footer, Content, Text, Left, Right, Body, Icon, Title, Button, Tabs, Tab, TabHeading } from 'native-base';
 import MenuHeader from './components/MenuHeader';
-import AdditionalTabs from './components/AdditionalTabs';
 import FlowScreen from './screens/FlowScreen';
-import Flow from './components/Flow';
 
 // todo?
 import * as flowJson from './resources/node-red-flows.json';
@@ -42,10 +40,10 @@ export default class App extends React.Component {
     } 
 
 
-// style = {{flex: 1}}
+// 
     return (
 			<Container>
-				<View>
+				<View style = {{flex: 1}}>
 					<MenuHeader/>
 					<FlowScreen flowDefinition={this.state.flowDefinition} flowTab={nodeById(this.state.flowDefinition,'926db3bd.4273a')}/>
 				</View> 
