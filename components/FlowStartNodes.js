@@ -15,7 +15,7 @@ const Item = ({ item, onPress, style }) => (
   </TouchableOpacity>
 );
 
-const FlowStartNodesFlat = ({ flowDefinition, currentNode, setNextNode, updateFlowData }) => {
+const FlowStartNodes = ({ flowDefinition, currentNode, setNextNode, updateFlowData }) => {
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FlowStartNodesFlat;
+export default FlowStartNodes;

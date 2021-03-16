@@ -6,7 +6,7 @@ import QuestionSelectSingle from "./QuestionSelectSingle";
 import QuestionPrimitiveDate from "./QuestionPrimitiveDate";
 import QuestionPrimitiveString from "./QuestionPrimitiveString";
 import { allStartNodes, nodeById, isFlow, nextNode } from '../node-red-flow-parser.js';
-import FlowStartNodesFlat from "./FlowStartNodesFlat";
+import FlowStartNodes from "./FlowStartNodes";
 import SwitchManual from "./SwitchManual";
 
 const Node = ({ flowDefinition, currentNode, setNextNode, updateFlowData }) => {
@@ -21,11 +21,7 @@ const Node = ({ flowDefinition, currentNode, setNextNode, updateFlowData }) => {
 		if (isFlow(currentNode)) {
 		// tabs (aka one flow)
 			console.log("Node: 2");
-			return <FlowStartNodesFlat flowDefinition={flowDefinition} currentNode={currentNode} setNextNode={setNextNode} updateFlowData={updateFlowData}/>
-			// return <FlatListSimple3/>
-			// return <FlatListSimple/>
-
-
+			return <FlowStartNodes flowDefinition={flowDefinition} currentNode={currentNode} setNextNode={setNextNode} updateFlowData={updateFlowData}/>
 
 		} else if (currentNode.type === 'switch-manual'){
 			// switch-manual

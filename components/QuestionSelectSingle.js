@@ -17,7 +17,7 @@ const QuestionSelectSingle = ({ flowDefinition, currentNode, setNextNode, update
     return (
       <Item
         item={item}
-        onPress={() => { setSelectedId(item.id); setNextNode(nextNode(flowDefinition, currentNode)[0]);} }
+        onPress={() => { setSelectedId(item.id); setNextNode(nextNode(flowDefinition, currentNode)[0]); } }
         style={{ backgroundColor }}
       />
     );
@@ -26,7 +26,10 @@ const QuestionSelectSingle = ({ flowDefinition, currentNode, setNextNode, update
 	const getAnswers = () => {
 		const nodes = [];
 		for (const node of currentNode.devices) {
-			nodes.push({id: node.sid, text: node.sid + " (" + node.sid + ")"});
+			// make sure that ids isn't reused for next select list; 
+			// otherwise the previous item is still present in selectedId state
+			// thefore the currentnode.id is added as prefix.
+			nodes.push({id: currentNode.id + '-' + node.sid, text: node.sid });
 		}
 		return nodes;
 	};

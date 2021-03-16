@@ -7,11 +7,11 @@ const FlowActions = ({cancelButton, cameraButton, previousButton, reloadButton, 
   return (
 			<View style={{  }}>
 				<View style={{ flexDirection:'row', backgroundColor: '#4154b3', justifyContent: 'space-around' }}>
-					<FontAwesome.Button name="eject" onPress={cancelButton} backgroundColor="transparent"/>
-					<FontAwesome.Button name="camera" backgroundColor="transparent"/>
-					<FontAwesome.Button name="caret-left" onPress={previousButton} backgroundColor="transparent"/>
-					<FontAwesome.Button name="reload"  backgroundColor="transparent"/>
-					<FontAwesome.Button name="caret-right" onPress={nextButton} backgroundColor="transparent"/>
+					<FontAwesome.Button size={ 40 } name="eject" onPress={cancelButton} backgroundColor="transparent"/>
+					<FontAwesome.Button disabled="true" size={ 40 } name="camera" backgroundColor="transparent"/>
+					<FontAwesome.Button size={ 40 } name="caret-left" onPress={previousButton} backgroundColor="transparent"/>
+					<FontAwesome.Button disabled="true" size={ 40 } name="reload"  backgroundColor="transparent"/>
+					<FontAwesome.Button size={ 40 } name="caret-right" onPress={nextButton} backgroundColor="transparent"/>
 				</View>
 			</View>
   );
